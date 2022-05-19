@@ -206,8 +206,16 @@ int main()
             }
 
         }
-        
-        if (collision == false)
+
+        if (collision)
+        {
+            DrawText("Game Over!",windowDimensions[0]/2-75,windowDimensions[1]/2,30,WHITE);
+        }
+        else if (finishLine + 300 <= scarfyData.pos.x)
+        {
+            DrawText("You Win!",windowDimensions[0]/2-65,windowDimensions[1]/2,30,WHITE);
+        }
+        else
         {
           DrawTextureRec(scarfy, scarfyData.rec, scarfyData.pos, WHITE);
   
